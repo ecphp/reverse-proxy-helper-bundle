@@ -1,0 +1,2 @@
+ec_reverse_proxy:
+    url: https://webgate.ec.europa.eu
