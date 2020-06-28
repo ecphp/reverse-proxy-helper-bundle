@@ -5,25 +5,27 @@ declare(strict_types=1);
 namespace spec\EcPhp\EcReverseProxyBundle\EventListener;
 
 use EcPhp\EcReverseProxyBundle\EventListener\SetEcReverseProxyHeaders;
+use EcPhp\EcReverseProxyBundle\RequestAlter;
 use PhpSpec\ObjectBehavior;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 class SetEcReverseProxyHeadersSpec extends ObjectBehavior
 {
-    public function it_can_alter_headers(ParameterBagInterface $parameterBag, RequestEvent $requestEvent)
+    public function it_can_alter_headers(RequestAlter $requestAlter, RequestEvent $requestEvent)
     {
-        $parameterBag
-            ->get('ec_reverse_proxy')
-            ->willReturn(
-                [
-                    'url' => 'https://foobar.com:123/',
-                ]
-            );
+        $requestAlter
+            ->beConstructedWith([
+                'url' => 'https://foo.bar.com:123/',
+            ]);
 
-        $this->beConstructedWith($parameterBag);
         $request = Request::create('http://local/user');
+
+        $requestAlter
+            ->__invoke($request)
+            ->willReturn($request);
+
+        $this->beConstructedWith($requestAlter);
 
         $requestEvent
             ->getRequest()
@@ -31,14 +33,6 @@ class SetEcReverseProxyHeadersSpec extends ObjectBehavior
 
         $this
             ->__invoke($requestEvent);
-
-        $requestEvent
-            ->getRequest()
-            ->shouldHaveBeenCalledOnce();
-
-        $parameterBag
-            ->get('ec_reverse_proxy')
-            ->shouldHaveBeenCalledOnce();
     }
 
     public function it_is_initializable()
@@ -46,8 +40,13 @@ class SetEcReverseProxyHeadersSpec extends ObjectBehavior
         $this->shouldHaveType(SetEcReverseProxyHeaders::class);
     }
 
-    public function let(ParameterBagInterface $parameterBag)
+    public function let(RequestAlter $requestAlter)
     {
-        $this->beConstructedWith($parameterBag);
+        $requestAlter
+            ->beConstructedWith([
+                'url' => 'https://foo.bar.com:123/',
+            ]);
+
+        $this->beConstructedWith($requestAlter);
     }
 }

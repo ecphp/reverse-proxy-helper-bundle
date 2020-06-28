@@ -1,6 +1,12 @@
 services:
-    EcPhp\EcReverseProxyBundle\EventListener\SetEcReverseProxyHeaders:
+    EcPhp\EcReverseProxyBundle\RequestEcReverseProxyHeadersAlter:
         autowire: true
         autoconfigure: true
+        arguments:
+            - '%ec_reverse_proxy%'
+
+    EcPhp\EcReverseProxyBundle\EventListener\SetEcReverseProxyHeaders:
+        arguments:
+            - '@EcPhp\EcReverseProxyBundle\RequestEcReverseProxyHeadersAlter'
         tags:
             - { name: kernel.event_listener, event: kernel.request, priority: 4096 }

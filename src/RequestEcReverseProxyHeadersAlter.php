@@ -10,43 +10,44 @@ use function array_key_exists;
 
 use const FILTER_VALIDATE_URL;
 
-final class RequestEcReverseProxyHeadersAlter
+final class RequestEcReverseProxyHeadersAlter implements RequestAlter
 {
     /**
-     * @var \Symfony\Component\HttpFoundation\Request
+     * @var array<mixed>
      */
-    private $request;
+    private $parameters;
 
     /**
-     * @var string
+     * RequestEcReverseProxyHeadersAlter constructor.
+     *
+     * @param array<mixed> $parameters
      */
-    private $url;
-
-    public function __construct(Request $request, string $url)
+    public function __construct(array $parameters)
     {
-        $this->request = $request;
-        $this->url = $url;
+        $this->parameters = $parameters;
     }
 
     /**
-     * @return void
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     *
+     * @return Request
      */
-    public function __invoke()
+    public function __invoke(Request $request): Request
     {
-        if ('' === $this->url) {
-            return;
+        if ('' === $this->parameters['url']) {
+            return $request;
         }
 
-        if (false === filter_var($this->url, FILTER_VALIDATE_URL)) {
-            return;
+        if (false === filter_var($this->parameters['url'], FILTER_VALIDATE_URL)) {
+            return $request;
         }
 
-        $this->request::setTrustedProxies(
+        $request::setTrustedProxies(
             ['127.0.0.1', 'REMOTE_ADDR'],
             Request::HEADER_X_FORWARDED_ALL
         );
 
-        $this->request->headers->set('X-Forwarded-Port', '');
+        $request->headers->set('X-Forwarded-Port', '');
 
         $headertoKeyMapping = [
             'X-Forwarded-Host' => 'host',
@@ -54,10 +55,10 @@ final class RequestEcReverseProxyHeadersAlter
             'X-Forwarded-Port' => 'port',
         ];
 
-        $parsed = parse_url($this->url);
+        $parsed = parse_url($this->parameters['url']);
 
         if (false === $parsed) {
-            return;
+            return $request;
         }
 
         foreach ($headertoKeyMapping as $header => $key) {
@@ -65,17 +66,9 @@ final class RequestEcReverseProxyHeadersAlter
                 continue;
             }
 
-            $this->request->headers->set($header, (string) $parsed[$key]);
+            $request->headers->set($header, (string) $parsed[$key]);
         }
-    }
 
-    public function getRequest(): Request
-    {
-        return $this->request;
-    }
-
-    public function getUrl(): string
-    {
-        return $this->url;
+        return $request;
     }
 }

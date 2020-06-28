@@ -4,20 +4,19 @@ declare(strict_types=1);
 
 namespace EcPhp\EcReverseProxyBundle\EventListener;
 
-use EcPhp\EcReverseProxyBundle\RequestEcReverseProxyHeadersAlter;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use EcPhp\EcReverseProxyBundle\RequestAlter;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 final class SetEcReverseProxyHeaders
 {
     /**
-     * @var \Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface
+     * @var RequestAlter
      */
-    private $parameters;
+    private $requestAlter;
 
-    public function __construct(ParameterBagInterface $parameterBag)
+    public function __construct(RequestAlter $requestAlter)
     {
-        $this->parameters = $parameterBag;
+        $this->requestAlter = $requestAlter;
     }
 
     /**
@@ -27,11 +26,6 @@ final class SetEcReverseProxyHeaders
      */
     public function __invoke(RequestEvent $event)
     {
-        $configuration = $this->parameters->get('ec_reverse_proxy');
-
-        (new RequestEcReverseProxyHeadersAlter(
-            $event->getRequest(),
-            (string) $configuration['url']
-        ))();
+        ($this->requestAlter)($event->getRequest());
     }
 }
