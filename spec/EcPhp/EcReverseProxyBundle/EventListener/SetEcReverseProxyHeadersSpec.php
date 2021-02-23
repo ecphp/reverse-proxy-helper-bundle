@@ -31,6 +31,10 @@ class SetEcReverseProxyHeadersSpec extends ObjectBehavior
             ->getRequest()
             ->willReturn($request);
 
+        $requestAlter
+            ->alter($request)
+            ->shouldBeCalled();
+
         $this
             ->__invoke($requestEvent);
     }
