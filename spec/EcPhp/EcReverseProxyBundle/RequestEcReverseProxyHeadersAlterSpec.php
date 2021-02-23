@@ -90,6 +90,22 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
             ->shouldReturn('http://local/foo');
     }
 
+    public function it_does_not_alter_the_request_if_the_provided_url_is_invalid()
+    {
+        $request = Request::create('http://local:543/foo');
+
+        $parameters = [
+            'url' => 'this-is-not-an-url',
+        ];
+
+        $this->beConstructedWith($parameters);
+
+        $this
+            ->alter($request)
+            ->getUri()
+            ->shouldReturn('http://local:543/foo');
+    }
+
     public function it_is_initializable()
     {
         $this->shouldHaveType(RequestEcReverseProxyHeadersAlter::class);
