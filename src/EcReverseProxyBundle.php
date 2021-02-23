@@ -6,6 +6,6 @@ namespace EcPhp\EcReverseProxyBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class EcReverseProxyBundle extends Bundle
+final class EcReverseProxyBundle extends Bundle
 {
 }

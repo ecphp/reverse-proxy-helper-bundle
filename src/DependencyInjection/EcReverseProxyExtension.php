@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 
-class EcReverseProxyExtension extends Extension
+final class EcReverseProxyExtension extends Extension
 {
     /**
      * {@inheritdoc}
