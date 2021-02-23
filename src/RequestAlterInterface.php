@@ -6,7 +6,7 @@ namespace EcPhp\EcReverseProxyBundle;
 
 use Symfony\Component\HttpFoundation\Request;
 
-interface RequestAlter
+interface RequestAlterInterface
 {
-    public function __invoke(Request $request): Request;
+    public function alter(Request $request): Request;
 }

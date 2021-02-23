@@ -10,20 +10,36 @@ use Symfony\Component\HttpFoundation\Request;
 
 class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
 {
-    public function it_alter_a_request_with_a_port_properly()
+    public function it_alter_a_request_with_a_port()
     {
         $request = Request::create('http://local:543/foo');
 
         $parameters = [
-            'url' => 'https://foobar.com',
+            'url' => 'https://foobar.com:789/',
         ];
 
         $this->beConstructedWith($parameters);
 
         $this
-            ->__invoke($request)
+            ->alter($request)
             ->getUri()
-            ->shouldReturn('https://foobar.com/foo');
+            ->shouldReturn('https://foobar.com:789/foo');
+    }
+
+    public function it_alter_a_request_with_a_prefix()
+    {
+        $request = Request::create('http://local:543/foo/index.html');
+
+        $parameters = [
+            'url' => 'https://foobar.com/f/b/',
+        ];
+
+        $this->beConstructedWith($parameters);
+
+        $this
+            ->alter($request)
+            ->getUri()
+            ->shouldReturn('https://foobar.com/f/b/foo/index.html');
     }
 
     public function it_can_alter_a_request()
@@ -37,7 +53,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
         $this->beConstructedWith($parameters);
 
         $this
-            ->__invoke($request)
+            ->alter($request)
             ->getUri()
             ->shouldReturn('https://foobar.com:321/foo');
     }
@@ -53,7 +69,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
         $this->beConstructedWith($parameters);
 
         $this
-            ->__invoke($request)
+            ->alter($request)
             ->getUri()
             ->shouldReturn('http://local/foo');
     }
@@ -69,7 +85,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
         $this->beConstructedWith($parameters);
 
         $this
-            ->__invoke($request)
+            ->alter($request)
             ->getUri()
             ->shouldReturn('http://local/foo');
     }
@@ -84,6 +100,9 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
         $parameters = [
             'url' => 'https://foobar.com:321',
         ];
+
+        // 60 = Request::HEADER_X_FORWARDED_HOST + Request::HEADER_X_FORWARDED_PORT + Request::HEADER_X_FORWARDED_PROTO + Request::HEADER_X_FORWARDED_PREFIX
+        Request::setTrustedProxies(['127.0.0.1', 'REMOTE_ADDR', '0.0.0.0'], 60);
 
         $this->beConstructedWith($parameters);
     }

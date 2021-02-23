@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace spec\EcPhp\EcReverseProxyBundle\EventListener;
 
 use EcPhp\EcReverseProxyBundle\EventListener\SetEcReverseProxyHeaders;
-use EcPhp\EcReverseProxyBundle\RequestAlter;
+use EcPhp\EcReverseProxyBundle\RequestAlterInterface;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 class SetEcReverseProxyHeadersSpec extends ObjectBehavior
 {
-    public function it_can_alter_headers(RequestAlter $requestAlter, RequestEvent $requestEvent)
+    public function it_can_alter_headers(RequestAlterInterface $requestAlter, RequestEvent $requestEvent)
     {
         $requestAlter
             ->beConstructedWith([
@@ -22,7 +22,7 @@ class SetEcReverseProxyHeadersSpec extends ObjectBehavior
         $request = Request::create('http://local/user');
 
         $requestAlter
-            ->__invoke($request)
+            ->alter($request)
             ->willReturn($request);
 
         $this->beConstructedWith($requestAlter);
@@ -40,7 +40,7 @@ class SetEcReverseProxyHeadersSpec extends ObjectBehavior
         $this->shouldHaveType(SetEcReverseProxyHeaders::class);
     }
 
-    public function let(RequestAlter $requestAlter)
+    public function let(RequestAlterInterface $requestAlter)
     {
         $requestAlter
             ->beConstructedWith([

@@ -4,28 +4,20 @@ declare(strict_types=1);
 
 namespace EcPhp\EcReverseProxyBundle\EventListener;
 
-use EcPhp\EcReverseProxyBundle\RequestAlter;
+use EcPhp\EcReverseProxyBundle\RequestAlterInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 final class SetEcReverseProxyHeaders
 {
-    /**
-     * @var RequestAlter
-     */
-    private $requestAlter;
+    private RequestAlterInterface $requestAlter;
 
-    public function __construct(RequestAlter $requestAlter)
+    public function __construct(RequestAlterInterface $requestAlter)
     {
         $this->requestAlter = $requestAlter;
     }
 
-    /**
-     * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
-     *
-     * @return void
-     */
-    public function __invoke(RequestEvent $event)
+    public function __invoke(RequestEvent $event): void
     {
-        ($this->requestAlter)($event->getRequest());
+        ($this->requestAlter)->alter($event->getRequest());
     }
 }
