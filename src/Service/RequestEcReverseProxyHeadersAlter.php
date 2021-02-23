@@ -39,7 +39,7 @@ final class RequestEcReverseProxyHeadersAlter implements RequestAlterInterface
             ->headers
             ->add(
                 array_map(
-                    static fn ($key): string => (string) $parsed[$key],
+                    static fn (string $key): string => (string) $parsed[$key],
                     array_filter(
                         [
                             'X-Forwarded-Host' => 'host',
@@ -47,7 +47,7 @@ final class RequestEcReverseProxyHeadersAlter implements RequestAlterInterface
                             'X-Forwarded-Port' => 'port',
                             'X-Forwarded-Prefix' => 'path',
                         ],
-                        static fn ($key): bool => array_key_exists($key, $parsed)
+                        static fn (string $key): bool => array_key_exists($key, $parsed)
                     )
                 )
             );
