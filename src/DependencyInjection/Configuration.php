@@ -22,7 +22,7 @@ final class Configuration implements ConfigurationInterface
         /** @phpstan-ignore-next-line */
         $rootNode
             ->children()
-            ->scalarNode('url')->defaultValue('')->end()
+            ->scalarNode('base_url')->defaultValue('')->end()
             ->end();
 
         return $treeBuilder;

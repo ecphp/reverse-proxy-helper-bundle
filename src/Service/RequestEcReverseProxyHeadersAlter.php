@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace EcPhp\EcReverseProxyBundle;
+namespace EcPhp\EcReverseProxyBundle\Service;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -27,11 +27,11 @@ final class RequestEcReverseProxyHeadersAlter implements RequestAlterInterface
 
     public function alter(Request $request): Request
     {
-        if (false === filter_var($this->parameters['url'], FILTER_VALIDATE_URL)) {
+        if (false === filter_var($this->parameters['base_url'], FILTER_VALIDATE_URL)) {
             return $request;
         }
 
-        if (false === $parsed = parse_url($this->parameters['url'])) {
+        if (false === $parsed = parse_url($this->parameters['base_url'])) {
             return $request;
         }
 

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\EcPhp\EcReverseProxyBundle;
+namespace spec\EcPhp\EcReverseProxyBundle\Service;
 
-use EcPhp\EcReverseProxyBundle\RequestEcReverseProxyHeadersAlter;
+use EcPhp\EcReverseProxyBundle\Service\RequestEcReverseProxyHeadersAlter;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -15,7 +15,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
         $request = Request::create('http://local:543/foo');
 
         $parameters = [
-            'url' => 'https://foobar.com:789/',
+            'base_url' => 'https://foobar.com:789/',
         ];
 
         $this->beConstructedWith($parameters);
@@ -31,7 +31,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
         $request = Request::create('http://local:543/foo/index.html');
 
         $parameters = [
-            'url' => 'https://foobar.com/f/b/',
+            'base_url' => 'https://foobar.com/f/b/',
         ];
 
         $this->beConstructedWith($parameters);
@@ -47,7 +47,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
         $request = Request::create('http://local/foo');
 
         $parameters = [
-            'url' => 'https://foobar.com:321',
+            'base_url' => 'https://foobar.com:321',
         ];
 
         $this->beConstructedWith($parameters);
@@ -63,7 +63,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
         $request = Request::create('http://local/foo');
 
         $parameters = [
-            'url' => '',
+            'base_url' => '',
         ];
 
         $this->beConstructedWith($parameters);
@@ -79,7 +79,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
         $request = Request::create('http://local/foo');
 
         $parameters = [
-            'url' => 'https://foo bar dot com',
+            'base_url' => 'https://foo bar dot com',
         ];
 
         $this->beConstructedWith($parameters);
@@ -95,7 +95,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
         $request = Request::create('http://local:543/foo');
 
         $parameters = [
-            'url' => 'this-is-not-an-url',
+            'base_url' => 'this-is-not-an-url',
         ];
 
         $this->beConstructedWith($parameters);
@@ -114,7 +114,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
     public function let()
     {
         $parameters = [
-            'url' => 'https://foobar.com:321',
+            'base_url' => 'https://foobar.com:321',
         ];
 
         // 60 = Request::HEADER_X_FORWARDED_HOST + Request::HEADER_X_FORWARDED_PORT + Request::HEADER_X_FORWARDED_PROTO + Request::HEADER_X_FORWARDED_PREFIX

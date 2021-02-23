@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace EcPhp\EcReverseProxyBundle\EventListener;
 
-use EcPhp\EcReverseProxyBundle\RequestAlterInterface;
+use EcPhp\EcReverseProxyBundle\Service\RequestAlterInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 final class SetEcReverseProxyHeaders

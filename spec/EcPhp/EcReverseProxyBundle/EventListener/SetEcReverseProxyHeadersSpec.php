@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace spec\EcPhp\EcReverseProxyBundle\EventListener;
 
 use EcPhp\EcReverseProxyBundle\EventListener\SetEcReverseProxyHeaders;
-use EcPhp\EcReverseProxyBundle\RequestAlterInterface;
+use EcPhp\EcReverseProxyBundle\Service\RequestAlterInterface;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
@@ -16,7 +16,7 @@ class SetEcReverseProxyHeadersSpec extends ObjectBehavior
     {
         $requestAlter
             ->beConstructedWith([
-                'url' => 'https://foo.bar.com:123/',
+                'base_url' => 'https://foo.bar.com:123/',
             ]);
 
         $request = Request::create('http://local/user');
@@ -44,7 +44,7 @@ class SetEcReverseProxyHeadersSpec extends ObjectBehavior
     {
         $requestAlter
             ->beConstructedWith([
-                'url' => 'https://foo.bar.com:123/',
+                'base_url' => 'https://foo.bar.com:123/',
             ]);
 
         $this->beConstructedWith($requestAlter);
