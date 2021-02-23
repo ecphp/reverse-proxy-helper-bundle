@@ -7,7 +7,7 @@ namespace EcPhp\EcReverseProxyBundle\DependencyInjection;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
-use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 
 class EcReverseProxyExtension extends Extension
 {
@@ -24,11 +24,11 @@ class EcReverseProxyExtension extends Extension
         // Load EC Reverse Proxy configuration.
         $container->setParameter('ec_reverse_proxy', $config);
 
-        $loader = new YamlFileLoader(
+        $loader = new PhpFileLoader(
             $container,
             new FileLocator(__DIR__ . '/../Resources/config')
         );
 
-        $loader->load('services.yaml');
+        $loader->load('services.php');
     }
 }
