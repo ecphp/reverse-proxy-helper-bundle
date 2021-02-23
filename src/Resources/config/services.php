@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
 use EcPhp\EcReverseProxyBundle\EventListener\SetEcReverseProxyHeaders;
-use EcPhp\EcReverseProxyBundle\RequestAlterInterface;
-use EcPhp\EcReverseProxyBundle\RequestEcReverseProxyHeadersAlter;
+use EcPhp\EcReverseProxyBundle\Service\RequestAlterInterface;
+use EcPhp\EcReverseProxyBundle\Service\RequestEcReverseProxyHeadersAlter;
 
 return static function (ContainerConfigurator $container) {
     $container
@@ -23,9 +23,8 @@ return static function (ContainerConfigurator $container) {
     $container
         ->services()
         ->set(SetEcReverseProxyHeaders::class)
-        ->args([
-            service(RequestAlterInterface::class),
-        ])
+        ->autowire()
+        ->autoconfigure()
         ->tag(
             'kernel.event_listener',
             [
