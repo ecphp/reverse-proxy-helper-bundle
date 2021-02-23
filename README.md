@@ -91,3 +91,10 @@ So the application needs to know to read the `X-Forwarded` headers to get the co
 (schema `https://`, host `example.org`).
 
 Symfony is able to reads those headers, but only if the trusted proxy configuration is correctly set to "trust" the load balancer/reverse proxy.
+
+## Open Source Contributions
+
+* symfony/framework-bundle: [#40281][http pr 40281]
+
+
+[http pr 40281]: https://github.com/symfony/symfony/pull/40281
