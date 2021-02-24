@@ -62,21 +62,6 @@ session handling and logging in Symfony when behind a reverse proxy.
 This is useful if your web servers sit behind a load balancer (*Nginx, HAProxy, Envoy, ELB/ALB, etc*),
 HTTP cache (*CloudFlare, Squid, Varnish, etc*), or other intermediary (*reverse*) proxy.
 
-## How does this work?
-
-Applications behind a reverse proxy typically read some HTTP headers such as `X-Forwarded-*`, (`X-Forwarded-For`, `X-Forwarded-Proto`, `X-Forwared-Host`, `X-Forwarded-Port`, `X-Forwarded-Prefix`)
-to know about the real end-client making an HTTP request.
-
-> If those headers were not set, then the application code would think every
-> incoming HTTP request would be from the proxy.
-
-The Symfony HTTP base classes have a concept of a "trusted proxy", where those `X-Forwarded-*`
-headers will only be used if the source IP address of the request is known.
-
-This package creates an easier interface to that option. You can set the IP addresses of the proxies
-(that the application would see, so it may be a private network IP address), and the Symfony HTTP classes will know to
-use the `X-Forwarded-*` headers if an HTTP request containing those headers was from the trusted proxy.
-
 ## Why does this matter?
 
 A very common load balancing approach is to send `https://` requests to a load balancer, but send `http://` requests to the application servers behind the load balancer.
@@ -92,7 +77,22 @@ So the application needs to know to read the `X-Forwarded` headers to get the co
 
 Symfony is able to reads those headers, but only if the trusted proxy configuration is correctly set to "trust" the load balancer/reverse proxy.
 
-## Open Source Contributions
+## How does this work?
+
+Applications behind a reverse proxy typically read some HTTP headers such as `X-Forwarded-*`, (`X-Forwarded-For`, `X-Forwarded-Proto`, `X-Forwared-Host`, `X-Forwarded-Port`, `X-Forwarded-Prefix`)
+to know about the real end-client making an HTTP request.
+
+> If those headers were not set, then the application code would think every
+> incoming HTTP request would be from the proxy.
+
+The Symfony HTTP base classes have a concept of a "trusted proxy", where those `X-Forwarded-*`
+headers will only be used if the source IP address of the request is known.
+
+This package creates an easier interface to that option. You can set the IP addresses of the proxies
+(*that the application would see, so it may be a private network IP address*), and Symfony will use
+the `X-Forwarded-*` headers if an HTTP request containing those headers was from the trusted proxy.
+
+## Open Source contributions
 
 * symfony/framework-bundle: [#40281][http pr 40281]
 
