@@ -30,5 +30,5 @@ repository:
     has_pages: false
     has_projects: false
     has_wiki: false
-    name: ec-reverse-proxy-bundle
+    name: reverse-proxy-helper-bundle
     private: false

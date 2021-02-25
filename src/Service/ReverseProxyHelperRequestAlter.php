@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace EcPhp\EcReverseProxyBundle\Service;
+namespace EcPhp\ReverseProxyHelperBundle\Service;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -10,7 +10,7 @@ use function array_key_exists;
 
 use const FILTER_VALIDATE_URL;
 
-final class RequestEcReverseProxyHeadersAlter implements RequestAlterInterface
+final class ReverseProxyHelperRequestAlter implements RequestAlterInterface
 {
     /**
      * @var array<mixed>

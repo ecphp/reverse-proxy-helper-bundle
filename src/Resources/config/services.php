@@ -4,25 +4,25 @@ declare(strict_types=1);
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
-use EcPhp\EcReverseProxyBundle\EventListener\SetEcReverseProxyHeaders;
-use EcPhp\EcReverseProxyBundle\Service\RequestAlterInterface;
-use EcPhp\EcReverseProxyBundle\Service\RequestEcReverseProxyHeadersAlter;
+use EcPhp\ReverseProxyHelperBundle\EventListener\SetReverseProxyHeaders;
+use EcPhp\ReverseProxyHelperBundle\Service\RequestAlterInterface;
+use EcPhp\ReverseProxyHelperBundle\Service\ReverseProxyHelperHeadersAlter;
 
 return static function (ContainerConfigurator $container) {
     $container
         ->services()
-        ->set(RequestEcReverseProxyHeadersAlter::class)
+        ->set(ReverseProxyHelperHeadersAlter::class)
         ->autowire()
         ->autoconfigure()
-        ->arg('$parameters', '%ec_reverse_proxy%');
+        ->arg('$parameters', '%reverse_proxy_helper%');
 
     $container
         ->services()
-        ->alias(RequestAlterInterface::class, RequestEcReverseProxyHeadersAlter::class);
+        ->alias(RequestAlterInterface::class, ReverseProxyHelperHeadersAlter::class);
 
     $container
         ->services()
-        ->set(SetEcReverseProxyHeaders::class)
+        ->set(SetReverseProxyHeaders::class)
         ->autowire()
         ->autoconfigure()
         ->tag(

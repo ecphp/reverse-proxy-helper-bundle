@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace EcPhp\EcReverseProxyBundle\Service;
+namespace EcPhp\ReverseProxyHelperBundle\Service;
 
 use Symfony\Component\HttpFoundation\Request;
 

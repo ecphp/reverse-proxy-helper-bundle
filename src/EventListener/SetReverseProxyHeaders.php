@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace EcPhp\EcReverseProxyBundle\EventListener;
+namespace EcPhp\ReverseProxyHelperBundle\EventListener;
 
-use EcPhp\EcReverseProxyBundle\Service\RequestAlterInterface;
+use EcPhp\ReverseProxyHelperBundle\Service\RequestAlterInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
-final class SetEcReverseProxyHeaders
+final class SetReverseProxyHeaders
 {
     private RequestAlterInterface $requestAlter;
 

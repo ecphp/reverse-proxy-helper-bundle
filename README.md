@@ -1,4 +1,4 @@
-# EC Reverse Proxy Bundle
+# Reverse Proxy Helper Bundle
 
 At European Commission, many applications are behind a reverse proxy server.
 
@@ -14,41 +14,26 @@ missing headers and set the appropriate trusted proxies configuration.
 
 ## Installation
 
-Edit `composer.json` and make sure to have:
-
 ```json
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "repositories": [
-      {
-          "type": "git",
-          "url": "https://citnet.tech.ec.europa.eu/CITnet/stash/scm/ecphp/ec-reverse-proxy-bundle.git"
-      }
-  ]
+composer require ecphp/reverse-proxy-helper-bundle
 ```
 
-Then do:
-
-```shell
-    composer require "ecphp/ec-reverse-proxy-bundle:dev-master"
-```
-
-Then, in your Symfony application, create a new configuration file `ec-reverse-proxy.yaml` in `config/packages`:
+Then, in your Symfony application, create a new configuration file `reverse-proxy-helper.yaml` in `config/packages`:
 
 ```yaml
-    ec_reverse_proxy:
-        base_url: https://webgate.ec.europa.eu:12345/app1/
+    reverse_proxy_helper:
+        base_url: https://frontend-url-foobar:12345/app1/
 ```
 
-You may also move this file in a specific environment if needed, and modulate the configuration based on the
-environment.
+You may also move this file in a specific environment if needed,
+and modulate the configuration based on the environment.
 
 You can also use environment variables as well:
 
 Update your configuration file as such to use an environment variable `REVERSE_PROXY_URL`:
 
 ```yaml
-    ec_reverse_proxy:
+    reverse_proxy_helper:
         base_url: '%env(resolve:REVERSE_PROXY_URL)%'
 ```
 

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace EcPhp\EcReverseProxyBundle\DependencyInjection;
+namespace EcPhp\ReverseProxyHelperBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 
-final class EcReverseProxyExtension extends Extension
+final class ReverseProxyHelperExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -22,7 +22,7 @@ final class EcReverseProxyExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         // Load EC Reverse Proxy configuration.
-        $container->setParameter('ec_reverse_proxy', $config);
+        $container->setParameter('reverse_proxy_helper', $config);
 
         $loader = new PhpFileLoader(
             $container,

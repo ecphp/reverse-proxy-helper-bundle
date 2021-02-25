@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace spec\EcPhp\EcReverseProxyBundle\Service;
+namespace spec\EcPhp\ReverseProxyHelperBundle\Service;
 
-use EcPhp\EcReverseProxyBundle\Service\RequestEcReverseProxyHeadersAlter;
+use EcPhp\ReverseProxyHelperBundle\Service\ReverseProxyHelperRequestAlter;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\HttpFoundation\Request;
 
-class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
+class ReverseProxyHelperRequestAlterSpec extends ObjectBehavior
 {
     public function it_alter_a_request_with_a_port()
     {
@@ -108,7 +108,7 @@ class RequestEcReverseProxyHeadersAlterSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(RequestEcReverseProxyHeadersAlter::class);
+        $this->shouldHaveType(ReverseProxyHelperRequestAlter::class);
     }
 
     public function let()

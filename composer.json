@@ -1,16 +1,16 @@
 {
-    "name": "ecphp/ec-reverse-proxy-bundle",
+    "name": "ecphp/reverse-proxy-helper-bundle",
     "type": "symfony-bundle",
     "description": "Helper bundle, configure the request headers from a given base URL.",
     "keywords": [
         "reverse-proxy",
         "headers"
     ],
-    "homepage": "http://github.com/ecphp/ec-reverse-proxy-bundle",
+    "homepage": "http://github.com/ecphp/reverse-proxy-helper-bundle",
     "license": "BSD-3-Clause",
     "require": {
         "php": ">= 7.4",
-        "symfony/framework-bundle": "^5.2.4"
+        "symfony/framework-bundle": "5.x-dev"
     },
     "require-dev": {
         "drupol/php-conventions": "^3.0.2",
@@ -18,14 +18,16 @@
         "infection/infection": "^0.21",
         "infection/phpspec-adapter": "^0.1.1",
         "phpspec/phpspec": "^7",
-        "symfony/http-kernel": "^5.2.4",
+        "symfony/http-kernel": "5.x-dev",
         "vimeo/psalm": "^4.6"
     },
     "autoload": {
         "psr-4": {
-            "EcPhp\\EcReverseProxyBundle\\": "src/"
+            "EcPhp\\ReverseProxyHelperBundle\\": "src/"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
         "grumphp": "./vendor/bin/grumphp run",
         "phpspec": "./vendor/bin/phpspec run"

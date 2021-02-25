@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace spec\EcPhp\EcReverseProxyBundle\EventListener;
+namespace spec\EcPhp\ReverseProxyHelperBundle\EventListener;
 
-use EcPhp\EcReverseProxyBundle\EventListener\SetEcReverseProxyHeaders;
-use EcPhp\EcReverseProxyBundle\Service\RequestAlterInterface;
+use EcPhp\ReverseProxyHelperBundle\EventListener\SetReverseProxyHeaders;
+use EcPhp\ReverseProxyHelperBundle\Service\RequestAlterInterface;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
-class SetEcReverseProxyHeadersSpec extends ObjectBehavior
+class SetReverseProxyHeadersSpec extends ObjectBehavior
 {
     public function it_can_alter_headers(RequestAlterInterface $requestAlter, RequestEvent $requestEvent)
     {
@@ -41,7 +41,7 @@ class SetEcReverseProxyHeadersSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType(SetEcReverseProxyHeaders::class);
+        $this->shouldHaveType(SetReverseProxyHeaders::class);
     }
 
     public function let(RequestAlterInterface $requestAlter)
