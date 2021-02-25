@@ -27,11 +27,13 @@ final class ReverseProxyHelperRequestAlter implements RequestAlterInterface
 
     public function alter(Request $request): Request
     {
-        if (false === filter_var($this->parameters['base_url'], FILTER_VALIDATE_URL)) {
+        $parsed = parse_url($this->parameters['base_url']);
+
+        if (false === array_key_exists('host', $parsed)) {
             return $request;
         }
 
-        if (false === $parsed = parse_url($this->parameters['base_url'])) {
+        if (false === filter_var($this->parameters['base_url'], FILTER_VALIDATE_URL)) {
             return $request;
         }
 
