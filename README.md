@@ -1,12 +1,12 @@
-[![Latest Stable Version](https://img.shields.io/packagist/v/ecphp/reverse-proxy-helper-bundle.svg?style=flat-square)](https://packagist.org/packages/ecphp/reverse-proxy-helper-bundle
- [![GitHub stars](https://img.shields.io/github/stars/ecphp/reverse-proxy-helper-bundle.svg?style=flat-square)](https://packagist.org/packages/ecphp/reverse-proxy-helper-bundle
- [![Total Downloads](https://img.shields.io/packagist/dt/ecphp/reverse-proxy-helper-bundle.svg?style=flat-square)](https://packagist.org/packages/ecphp/reverse-proxy-helper-bundle
+[![Latest Stable Version](https://img.shields.io/packagist/v/ecphp/reverse-proxy-helper-bundle.svg?style=flat-square)](https://packagist.org/packages/ecphp/reverse-proxy-helper-bundle)
+ [![GitHub stars](https://img.shields.io/github/stars/ecphp/reverse-proxy-helper-bundle.svg?style=flat-square)](https://packagist.org/packages/ecphp/reverse-proxy-helper-bundle)
+ [![Total Downloads](https://img.shields.io/packagist/dt/ecphp/reverse-proxy-helper-bundle.svg?style=flat-square)](https://packagist.org/packages/ecphp/reverse-proxy-helper-bundle)
  [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ecphp/reverse-proxy-helper-bundle/Continuous%20Integration/master?style=flat-square)](https://github.com/ecphp/reverse-proxy-helper-bundle/actions)
  [![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/ecphp/reverse-proxy-helper-bundle/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/ecphp/reverse-proxy-helper-bundle/?branch=master)
- [![Type Coverage](https://shepherd.dev/github/ecphp/reverse-proxy-helper-bundle/coverage.svg)](https://shepherd.dev/github/ecphp/reverse-proxy-helper-bundle
+ [![Type Coverage](https://shepherd.dev/github/ecphp/reverse-proxy-helper-bundle/coverage.svg)](https://shepherd.dev/github/ecphp/reverse-proxy-helper-bundle)
  [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/ecphp/reverse-proxy-helper-bundle/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/ecphp/reverse-proxy-helper-bundle/?branch=master)
  [![Read the Docs](https://img.shields.io/readthedocs/ecphp-reverse-proxy-helper-bundle?style=flat-square)](https://ecphp-reverse-proxy-helper-bundle.readthedocs.io/)
- [![License](https://img.shields.io/packagist/l/ecphp/reverse-proxy-helper-bundle.svg?style=flat-square)](https://packagist.org/packages/ecphp/reverse-proxy-helper-bundle
+ [![License](https://img.shields.io/packagist/l/ecphp/reverse-proxy-helper-bundle.svg?style=flat-square)](https://packagist.org/packages/ecphp/reverse-proxy-helper-bundle)
 
 # Reverse Proxy Helper Bundle
 
