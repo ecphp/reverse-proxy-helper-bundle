@@ -51,6 +51,14 @@ Update your configuration file as such to use an environment variable `REVERSE_P
         base_url: '%env(resolve:REVERSE_PROXY_URL)%'
 ```
 
+You also need to configure the `trusted_headers` and `trusted_proxies` in `framework.yaml`, example:
+
+```yaml
+framework:
+    trusted_proxies: '127.0.0.1,REMOTE_ADDR'
+    trusted_headers: ['x-forwarded-for', 'x-forwarded-host', 'x-forwarded-proto', 'x-forwarded-port', 'x-forwarded-prefix']
+```
+
 ## What does this do?
 
 This bundle ensures that proper headers are set for HTTP requests behind a reverse proxy.
