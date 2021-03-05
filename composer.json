@@ -10,7 +10,7 @@
     "license": "BSD-3-Clause",
     "require": {
         "php": ">= 7.4",
-        "symfony/framework-bundle": "5.x-dev"
+        "symfony/framework-bundle": "^5.2.4"
     },
     "require-dev": {
         "drupol/php-conventions": "^3.0.2",
@@ -18,7 +18,7 @@
         "infection/infection": "^0.21",
         "infection/phpspec-adapter": "^0.1.1",
         "phpspec/phpspec": "^7",
-        "symfony/http-kernel": "5.x-dev",
+        "symfony/http-kernel": "^5.2.4",
         "vimeo/psalm": "^4.6"
     },
     "autoload": {
