@@ -9,12 +9,12 @@
     "homepage": "http://github.com/ecphp/reverse-proxy-helper-bundle",
     "license": "BSD-3-Clause",
     "require": {
-        "php": ">= 7.4",
+        "php": ">= 7.2.5",
         "symfony/framework-bundle": "^5.2.4"
     },
     "require-dev": {
         "drupol/php-conventions": "^3.0.2",
-        "friends-of-phpspec/phpspec-code-coverage": "^6",
+        "friends-of-phpspec/phpspec-code-coverage": "^6.1",
         "infection/infection": "^0.21",
         "infection/phpspec-adapter": "^0.1.1",
         "phpspec/phpspec": "^7",
@@ -26,8 +26,6 @@
             "EcPhp\\ReverseProxyHelperBundle\\": "src/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "scripts": {
         "grumphp": "./vendor/bin/grumphp run",
         "phpspec": "./vendor/bin/phpspec run"
