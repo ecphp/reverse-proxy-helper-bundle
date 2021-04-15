@@ -10,7 +10,7 @@ use function array_key_exists;
 
 use const FILTER_VALIDATE_URL;
 
-final class ReverseProxyHelperRequestAlter implements RequestAlterInterface
+final class RequestHeadersAlter implements RequestAlterInterface
 {
     /**
      * @var array<mixed>

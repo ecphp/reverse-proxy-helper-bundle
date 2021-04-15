@@ -7,7 +7,7 @@ namespace spec\EcPhp\ReverseProxyHelperBundle\DependencyInjection;
 use EcPhp\ReverseProxyHelperBundle\DependencyInjection\ReverseProxyHelperExtension;
 use EcPhp\ReverseProxyHelperBundle\EventListener\SetReverseProxyHeaders;
 use EcPhp\ReverseProxyHelperBundle\Service\RequestAlterInterface;
-use EcPhp\ReverseProxyHelperBundle\Service\ReverseProxyHelperHeadersAlter;
+use EcPhp\ReverseProxyHelperBundle\Service\RequestHeadersAlter;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\Alias;
@@ -45,13 +45,13 @@ class ReverseProxyHelperExtensionSpec extends ObjectBehavior
 
         $containerBuilder
             ->setDefinition(
-                ReverseProxyHelperHeadersAlter::class,
+                RequestHeadersAlter::class,
                 Argument::type(Definition::class)
             )
             ->shouldBeCalled();
 
         $containerBuilder
-            ->removeBindings(ReverseProxyHelperHeadersAlter::class)
+            ->removeBindings(RequestHeadersAlter::class)
             ->shouldBeCalled();
 
         $containerBuilder
