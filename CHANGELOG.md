@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.0...1.0.0)
+## [1.0.1](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.0...1.0.1)
+
+### Merged
+
+- Update composer.json. [`#2`](https://github.com/ecphp/reverse-proxy-helper-bundle/pull/2)
+
+### Commits
+
+- fix: Rename service class and fix Symfony service wiring. [`cbf2271`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/cbf22713dc7a1363abdca8b297904ddc5dd16078)
+- docs: Add Changelog. [`a88f6e1`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/a88f6e15d3293f6896d33dd4fe9538f6a8b9c288)
 
 ## 1.0.0 - 2021-03-05
 
