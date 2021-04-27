@@ -13,7 +13,7 @@
         "symfony/framework-bundle": "^5.2.4"
     },
     "require-dev": {
-        "drupol/php-conventions": "^3.0.2",
+        "drupol/php-conventions": "^4.0.4",
         "friends-of-phpspec/phpspec-code-coverage": "^6.1",
         "infection/infection": "^0.21",
         "infection/phpspec-adapter": "^0.1.1",
