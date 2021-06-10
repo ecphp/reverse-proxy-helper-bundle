@@ -5,7 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.2](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.1...1.0.2)
+## [1.0.3](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.2...1.0.3)
+
+### Commits
+
+- docs: Update README. [`db4881a`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/db4881ae005daa9bbe4d4cefca26e3aef1f189f9)
+- refactor: Throws when it is unable to parse the URL. [`ab8fb0a`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/ab8fb0a7546af5ac915992241254d03a2ea5601e)
+- Update Psalm error level. [`dbbe719`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/dbbe719fae229196114742e577afcfd9db7c4254)
+- Update composer.json. [`95da40e`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/95da40ed7c92bd83ab59269135bbeebf55095d3d)
+- ci: Disable test on Darwin platforms. [`5d5e184`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/5d5e1848f890984dfd90e649275feb50fbae77a3)
+
+## [1.0.2](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.1...1.0.2) - 2021-06-10
 
 ### Merged
 
@@ -14,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Commits
 
+- doc: Update Changelog. [`1b37bbc`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/1b37bbc380c734da183eac58a34e96b8ac1a5c5c)
 - ci: Enable automatic changelog generation. [`3551463`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/3551463b53c38ca4188a709e3d8819fc2be4fec5)
 - Autofix code style. [`da5ad2a`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/da5ad2a0d6a423c16ed4ed6b41602deed75716e0)
 - chore(deps-dev): Update infection/infection requirement [`5975bfc`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/5975bfc3d832a6f0ccfe9e273de1ec17b79e853d)
