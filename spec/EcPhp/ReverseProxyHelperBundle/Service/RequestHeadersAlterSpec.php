@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace spec\EcPhp\ReverseProxyHelperBundle\Service;
 
 use EcPhp\ReverseProxyHelperBundle\Service\RequestHeadersAlter;
+use InvalidArgumentException;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -116,6 +117,21 @@ class RequestHeadersAlterSpec extends ObjectBehavior
     public function it_is_initializable()
     {
         $this->shouldHaveType(RequestHeadersAlter::class);
+    }
+
+    public function it_throws_an_issue_when_it_is_unable_to_parse_an_url()
+    {
+        $request = Request::create('http://local:543/foo');
+
+        $parameters = [
+            'base_url' => '//:\/ /s?a=12&b=12.3.3.4:1233',
+        ];
+
+        $this->beConstructedWith($parameters);
+
+        $this
+            ->shouldThrow(InvalidArgumentException::class)
+            ->during('alter', [$request]);
     }
 
     public function let()

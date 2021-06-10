@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace EcPhp\ReverseProxyHelperBundle\Service;
 
+use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\Request;
 
 use function array_key_exists;
@@ -36,6 +37,10 @@ final class RequestHeadersAlter implements RequestAlterInterface
     {
         $parsed = parse_url($this->parameters['base_url']);
 
+        if (false === $parsed) {
+            throw new InvalidArgumentException('Unable to parse the provided URL.');
+        }
+
         if (false === array_key_exists('host', $parsed)) {
             return $request;
         }
@@ -48,7 +53,9 @@ final class RequestHeadersAlter implements RequestAlterInterface
             ->headers
             ->add(
                 array_map(
-                    static fn (string $key): string => (string) $parsed[$key],
+                    static function (string $key) use ($parsed): string {
+                        return (string) $parsed[$key];
+                    },
                     array_filter(
                         [
                             'X-Forwarded-Host' => 'host',
@@ -56,7 +63,9 @@ final class RequestHeadersAlter implements RequestAlterInterface
                             'X-Forwarded-Port' => 'port',
                             'X-Forwarded-Prefix' => 'path',
                         ],
-                        static fn (string $key): bool => array_key_exists($key, $parsed)
+                        static function (string $key) use ($parsed): bool {
+                            return array_key_exists($key, $parsed);
+                        }
                     )
                 )
             );
