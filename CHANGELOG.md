@@ -5,10 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.3](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.2...1.0.3)
+## [1.0.4](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.3...1.0.4)
 
 ### Commits
 
+- docs: Update README. [`8ebaeb5`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/8ebaeb56d9d0c307983b8efa8141c0e034c5f717)
+- refactor: PHP 7.2 compatibility. [`ddc38d1`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/ddc38d138dbf09f9d9c7e6f5e1ec5953f05fd231)
+
+## [1.0.3](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.2...1.0.3) - 2021-06-10
+
+### Commits
+
+- doc: Update Changelog. [`c7856c6`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/c7856c6b8457fc8629bee5d2c0c620761f92b576)
 - docs: Update README. [`db4881a`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/db4881ae005daa9bbe4d4cefca26e3aef1f189f9)
 - refactor: Throws when it is unable to parse the URL. [`ab8fb0a`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/ab8fb0a7546af5ac915992241254d03a2ea5601e)
 - Update Psalm error level. [`dbbe719`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/dbbe719fae229196114742e577afcfd9db7c4254)
