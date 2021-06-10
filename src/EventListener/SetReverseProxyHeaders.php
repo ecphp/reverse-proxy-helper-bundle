@@ -16,7 +16,10 @@ use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 final class SetReverseProxyHeaders
 {
-    private RequestAlterInterface $requestAlter;
+    /**
+     * @var RequestAlterInterface
+     */
+    private $requestAlter;
 
     public function __construct(RequestAlterInterface $requestAlter)
     {

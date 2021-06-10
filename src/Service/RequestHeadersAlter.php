@@ -23,7 +23,7 @@ final class RequestHeadersAlter implements RequestAlterInterface
     /**
      * @var array<mixed>
      */
-    private array $parameters;
+    private $parameters;
 
     /**
      * @param array<mixed> $parameters
