@@ -24,6 +24,7 @@ missing headers and set the appropriate trusted proxies configuration.
 
 ## Requirements
 
+* PHP >= 7.2.5
 * Symfony >= 5.2.4
 
 ## Installation
