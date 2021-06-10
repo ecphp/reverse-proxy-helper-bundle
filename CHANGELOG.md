@@ -5,7 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.1](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.0...1.0.1)
+## [1.0.2](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.1...1.0.2)
+
+### Merged
+
+- chore(deps): Bump actions/cache from 2.1.4 to 2.1.5 [`#6`](https://github.com/ecphp/reverse-proxy-helper-bundle/pull/6)
+- chore(deps-dev): Update infection/infection requirement from ^0.22 to ^0.23 [`#7`](https://github.com/ecphp/reverse-proxy-helper-bundle/pull/7)
+
+### Commits
+
+- ci: Enable automatic changelog generation. [`3551463`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/3551463b53c38ca4188a709e3d8819fc2be4fec5)
+- Autofix code style. [`da5ad2a`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/da5ad2a0d6a423c16ed4ed6b41602deed75716e0)
+- chore(deps-dev): Update infection/infection requirement [`5975bfc`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/5975bfc3d832a6f0ccfe9e273de1ec17b79e853d)
+- refactor: Autofix code style. [`7332aa8`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/7332aa850aa4274208639fe499583ed0109016a7)
+- chore: Switch to ecphp/php-conventions. [`94584bf`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/94584bfe73e0c053ada54db3cdfec1efa7b810a9)
+
+## [1.0.1](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.0...1.0.1) - 2021-04-15
 
 ### Merged
 
@@ -13,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Commits
 
+- docs: Update changelog. [`578e4e5`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/578e4e5432f0d740a3af7c3eadc4158da5144cb0)
 - fix: Rename service class and fix Symfony service wiring. [`cbf2271`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/cbf22713dc7a1363abdca8b297904ddc5dd16078)
 - docs: Add Changelog. [`a88f6e1`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/a88f6e15d3293f6896d33dd4fe9538f6a8b9c288)
 
