@@ -5,10 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.4](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.3...1.0.4)
+## [1.0.5](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.4...1.0.5)
 
 ### Commits
 
+- chore: Update .gitattributes. [`cb6f4e8`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/cb6f4e8773e80caf79851102c26a25fe89476947)
+- chore: Update Docker stack. [`cca1241`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/cca1241175507a9c87b5854f51b7ef074b5b1744)
+
+## [1.0.4](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.3...1.0.4) - 2021-06-10
+
+### Commits
+
+- doc: Update Changelog. [`5c25e00`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/5c25e0061f4a9e0f330f71ec343eb9e29d450d08)
 - docs: Update README. [`8ebaeb5`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/8ebaeb56d9d0c307983b8efa8141c0e034c5f717)
 - refactor: PHP 7.2 compatibility. [`ddc38d1`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/ddc38d138dbf09f9d9c7e6f5e1ec5953f05fd231)
 
