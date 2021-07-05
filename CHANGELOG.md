@@ -5,10 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.5](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.4...1.0.5)
+## [1.0.6](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.5...1.0.6)
 
 ### Commits
 
+- chore: Remove obsolete files. [`b026d29`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/b026d2959aa20ba186046afcee89b05a3444a7fb)
+
+## [1.0.5](https://github.com/ecphp/reverse-proxy-helper-bundle/compare/1.0.4...1.0.5) - 2021-07-05
+
+### Commits
+
+- docs: Add/update CHANGELOG. [`de14c64`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/de14c6445fc2dd9762637a0c17de3f6b89584c0b)
 - chore: Update .gitattributes. [`cb6f4e8`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/cb6f4e8773e80caf79851102c26a25fe89476947)
 - chore: Update Docker stack. [`cca1241`](https://github.com/ecphp/reverse-proxy-helper-bundle/commit/cca1241175507a9c87b5854f51b7ef074b5b1744)
 
