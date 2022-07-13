@@ -23,7 +23,7 @@ class SetReverseProxyHeadersSpec extends ObjectBehavior
     {
         $requestAlter
             ->beConstructedWith([
-                'base_url' => 'https://foo.bar.com:123/',
+                'https://foo.bar.com:123/',
             ]);
 
         $request = Request::create('http://local/user');
@@ -55,7 +55,7 @@ class SetReverseProxyHeadersSpec extends ObjectBehavior
     {
         $requestAlter
             ->beConstructedWith([
-                'base_url' => 'https://foo.bar.com:123/',
+                'https://foo.bar.com:123/',
             ]);
 
         $this->beConstructedWith($requestAlter);
